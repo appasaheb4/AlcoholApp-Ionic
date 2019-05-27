@@ -1,0 +1,66 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Registation</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <form [formGroup]="registationForm">
+        <ion-list inset>
+            <ion-item>
+                <ion-input type="text"  placeholder="Name *" formControlName="name" [(ngModel)]="name"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-input type="number" placeholder="Mobile Number *"  formControlName="mobileNo" [(ngModel)]="mobileNo"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-input type="email" placeholder="Email *" formControlName="email" [(ngModel)]="email" ></ion-input>
+            </ion-item>
+             <ion-item>
+                <ion-input type="number" placeholder="Adhar Number" formControlName="adharno" [(ngModel)]="adharno"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-textarea type="text" placeholder="Address" formControlName="address" [(ngModel)]="address"></ion-textarea>
+            </ion-item>
+            <ion-item>
+                <ion-input type="text" placeholder="Area *" formControlName="area"  [(ngModel)]="area"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-input type="text" placeholder="City *" formControlName="city"  [(ngModel)]="city"></ion-input>
+            </ion-item>
+            <ion-item>
+
+                <ion-input type="text" placeholder="Adhar Number" formControlName="adharno"  [(ngModel)]="adharno"></ion-input>
+            </ion-item>
+            <ion-item>
+
+                <ion-input type="number" placeholder="PinCode" formControlName="address"  [(ngModel)]="pin"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-input type="text" placeholder="State" formControlName="address"  [(ngModel)]="state"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-input type="text" placeholder="Country" formControlName="address" [(ngModel)]="cuntry"></ion-input>
+            </ion-item>
+             <ion-item>
+                <ion-input type="password" value="" placeholder="Password" formControlName="oldPass" [(ngModel)]="oldPass"  required></ion-input>
+            </ion-item>
+             <ion-item>
+                <ion-input type="password" value="" placeholder="Confirm Password" formControlName="newPass" [(ngModel)]="newPass"  required></ion-input>
+            </ion-item>
+
+     
+            <ion-item>
+                <ion-label color="blue" class="lblSize12">I understand & agree to the Terms & Conditions</ion-label>
+                <ion-checkbox color="dark"  formControlName="tearC" [(ngModel)]="teapCheack" (ionChange)="termAlert();"></ion-checkbox>
+            </ion-item>
+            <ion-item>
+                <button ion-button full type="submit" class="lblSize" round  [disabled]="!registationForm.valid" *ngIf="btnSubmit" (click)="saveData();">Submit</button>
+            </ion-item>
+        </ion-list>
+    </form>
+</ion-content>
+<ion-footer>
+     <ion-navbar class="text-center">
+        <ion-title class="text-center" (click)="back()" color="appcolor" class="btnBorderNone">Already Sign up!Sign in Me.</ion-title>
+    </ion-navbar>
+</ion-footer>

@@ -1,0 +1,54 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Product</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <div class="slider">  
+        <ion-slides *ngIf="getProductData && getProductData.length"  autoplay="5000" loop="false" speed="500"  pager="true">
+            <ion-slide *ngFor="let Image of getProductData">
+                <img src="{{Image.imagePath}}" class="prodImage" alt="Product Image">
+            </ion-slide>                 
+        </ion-slides> 
+       
+    </div>
+     <div *ngFor="let item of getProductData">
+         <ion-label class="proName" color="dark">{{item.productName}}</ion-label>
+        <ion-label class="proPrice" color="dark">Rs.  {{item.productPrice}}</ion-label>
+    </div>
+    <div class="sharePro img-circle">
+        <ion-icon name="share" color="shareButton"></ion-icon>
+    </div>
+
+</ion-content>
+<ion-footer>
+    <ion-grid>
+        <ion-row>     
+            <ion-col col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 >
+                <button ion-button icon-only block   clear>
+                    <ion-icon name="arrow-round-back" ></ion-icon>
+                </button>
+            </ion-col>     
+            <ion-col col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2>
+                <button ion-button icon-only  clear>
+                        <ion-icon name="cart"></ion-icon>4
+                </button>
+            </ion-col>
+            <ion-col col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 >
+                <button ion-button icon-only   color="dark" clear>
+                    <ion-icon ios="ios-share" md="md-share" color="shareButton"></ion-icon>
+                </button>   
+            </ion-col>  
+            <ion-col col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 >
+                <button ion-button icon-only   color="dark" clear>
+                        <ion-icon ios="ios-create" md="md-create" color="blue"></ion-icon>
+                </button>
+            </ion-col>  
+        </ion-row>
+    </ion-grid>
+</ion-footer>

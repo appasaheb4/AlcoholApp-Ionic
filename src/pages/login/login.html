@@ -1,0 +1,35 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title class="text-center">Sign In</ion-title>
+  </ion-navbar>    
+
+</ion-header>
+
+
+<ion-content>
+  <div class="form-group" padding>
+      <form [formGroup]="loginForm">
+           <br/><br/><br/><br/><br/><br/>
+          <ion-list inset>
+              <ion-item>
+                    <ion-input type="number" placeholder="Mobile Number" formControlName="mobileNo" [(ngModel)]="mobileNo" autofocus></ion-input>
+              </ion-item>
+              <ion-item>
+                  <ion-input type="password" placeholder="Password" formControlName="password" [(ngModel)]="password"></ion-input>
+              </ion-item>
+               <ion-item no-lines>
+              <button ion-button type="" full round (click)="login();"  [disabled]="!loginForm.valid">Sign In</button>
+               </ion-item>
+               <ion-item no-lines>
+              <button ion-button block  outline (click)="emailSent();" >Forget Password</button>
+               </ion-item>
+          </ion-list>
+      </form>
+  </div>
+</ion-content>
+<ion-footer>
+     <ion-navbar class="text-center">
+        <ion-title class="text-center" (click)="goRegiationPage();" color="appcolor" class="btnBorderNone">Sign Up</ion-title>
+    </ion-navbar>
+</ion-footer>
